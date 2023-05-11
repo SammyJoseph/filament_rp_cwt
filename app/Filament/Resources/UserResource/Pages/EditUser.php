@@ -16,4 +16,14 @@ class EditUser extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index'); // redirects to index page after editing a record (instead of edit page)
+    }
+
+    protected function getSavedNotificationTitle(): ?string
+    {
+        return 'User updated';
+    }
 }

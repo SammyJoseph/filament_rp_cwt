@@ -14,4 +14,9 @@ class CreateUser extends CreateRecord
     {
         return $this->getResource()::getUrl('index'); // redirects to index page after creating a new record (instead of edit page)
     }
+
+    protected function getCreatedNotificationTitle(): ?string
+    {
+        return 'User created';
+    }
 }
